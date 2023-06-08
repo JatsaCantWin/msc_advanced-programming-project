@@ -34,17 +34,17 @@ This repository contains the final project I and my colleague did as part of the
 - /user/cart
     - GET: query all books in the cart of the currently logged in user
     - POST: add books to the cart
-        ```json
+        ```javascript
         {
             bookId: Integer
-            quantity: Integer (optional, by deafult 1)
+            quantity: Integer // optional, by deafult 1
         }
         ```
     - DELETE: remove books from the cart
-        ```json
+        ```javascript
         {
             bookId: Integer
-            quantity: Integer (optional, by default remove everything)
+            quantity: Integer // optional, by default remove everything
         }
         ```
 - /user/cart/submit
