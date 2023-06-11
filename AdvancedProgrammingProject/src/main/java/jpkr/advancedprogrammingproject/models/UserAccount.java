@@ -15,7 +15,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Document(collection = "users")
 public class UserAccount implements UserDetails {
     @Id
-    @JsonIgnore
     private String id;
 
     private String username;
