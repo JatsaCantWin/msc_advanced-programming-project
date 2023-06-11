@@ -23,7 +23,7 @@ public class SecurityConfig {
         return http
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .authorizeExchange((authorize) -> authorize
-                        .pathMatchers(HttpMethod.GET, "/books").permitAll()
+                        .pathMatchers(HttpMethod.GET, "/books", "/books/**").permitAll()
                         .pathMatchers("/books").hasRole("ADMIN")
                         .anyExchange().authenticated()
                 )
