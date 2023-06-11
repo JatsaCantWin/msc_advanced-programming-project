@@ -33,6 +33,12 @@ public class BookService {
     }
 
     public List<Book> getFilteredBooks(String author, Integer releaseYear, String title) {
+        if (((null == author) || author.isBlank()) &&
+            (null == releaseYear) &&
+            ((null == title) || title.isBlank())) {
+            // None of the filters are valid - return empty list
+            return List.of();
+        }
         List<Criteria> criteriaList = new ArrayList<>();
 
         if (author != null) {
