@@ -4,6 +4,8 @@ import jpkr.advancedprogrammingproject.models.Book;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,7 +21,10 @@ public class BookService {
         this.mongoTemplate = mongoTemplate;
     }
 
-    public Book saveBook(Book book) {
+    public Book saveBook(Book book) throws Exception {
+        if (!book.validate()) {
+            throw new Exception("Cannot store this Book: required fields are missing.");
+        }
         return mongoTemplate.save(book);
     }
 
