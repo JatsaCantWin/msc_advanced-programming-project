@@ -6,15 +6,21 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 
 import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Document(collection = "books")
 public class Book {
     @Id
+    @JsonIgnore
     private String id;
+
     private String title;
+
     private String author;
+
     @Field(targetType = FieldType.DATE_TIME)
     private Date releaseDate;
+
     private String ISBN;
 
     public Book(String title, String author, Date releaseDate, String ISBN) {
@@ -22,6 +28,14 @@ public class Book {
         this.author = author;
         this.releaseDate = releaseDate;
         this.ISBN = ISBN;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -54,5 +68,13 @@ public class Book {
 
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
+    }
+
+    public boolean validate() {
+        return
+            (null != title) && (!title.isBlank()) &&
+            (null != author) && (!author.isBlank()) &&
+            (null != releaseDate) &&
+            (null != ISBN) && (!ISBN.isBlank());
     }
 }

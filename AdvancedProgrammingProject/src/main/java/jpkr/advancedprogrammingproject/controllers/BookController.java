@@ -2,6 +2,7 @@ package jpkr.advancedprogrammingproject.controllers;
 
 import jpkr.advancedprogrammingproject.services.BookService;
 import jpkr.advancedprogrammingproject.models.Book;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,7 +30,7 @@ public class BookController {
     }
 
     @PostMapping
-    public Book saveBook(@RequestBody Book book) {
+    public ResponseEntity<?> saveBook(@RequestBody Book book) {
         return bookService.saveBook(book);
     }
 }
