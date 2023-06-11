@@ -31,6 +31,10 @@ public class BookController {
 
     @PostMapping
     public ResponseEntity<?> saveBook(@RequestBody Book book) {
-        return bookService.saveBook(book);
+        try {
+            return ResponseEntity.ok(bookService.saveBook(book));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }

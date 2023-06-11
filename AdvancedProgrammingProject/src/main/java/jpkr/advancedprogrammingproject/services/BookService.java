@@ -21,12 +21,11 @@ public class BookService {
         this.mongoTemplate = mongoTemplate;
     }
 
-    public ResponseEntity<?> saveBook(Book book) {
+    public Book saveBook(Book book) throws Exception {
         if (!book.validate()) {
-            String errorMessage = "Cannot store this Book: required fields are missing.";
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
+            throw new Exception("Cannot store this Book: required fields are missing.");
         }
-        return ResponseEntity.ok(mongoTemplate.save(book));
+        return mongoTemplate.save(book);
     }
 
     public List<Book> getAllBooks() {
