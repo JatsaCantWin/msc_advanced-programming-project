@@ -1,6 +1,5 @@
 package jpkr.advancedprogrammingproject.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -11,7 +10,6 @@ import java.util.List;
 @Document(collection = "orders")
 public class Order {
     @Id
-    @JsonIgnore
     private String id;
 
     @Field(targetType = FieldType.OBJECT_ID)
