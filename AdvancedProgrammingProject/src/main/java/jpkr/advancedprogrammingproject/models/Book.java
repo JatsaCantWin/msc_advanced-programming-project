@@ -6,10 +6,12 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 
 import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Document(collection = "books")
 public class Book {
     @Id
+    @JsonIgnore
     private String id;
 
     private String title;
