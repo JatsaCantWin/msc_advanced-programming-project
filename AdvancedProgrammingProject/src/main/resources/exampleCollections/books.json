@@ -1,0 +1,55 @@
+[
+  {
+    "_id": {
+      "$oid": "648503aed4dd0edcc671d363"
+    },
+    "title": "Harry Potter i Kamień Filozoficzny",
+    "author": "J.K. Rowling",
+    "releaseDate": {
+      "$date": "2005-03-10T00:00:00.000Z"
+    },
+    "ISBN": "978-83-800-8211-3"
+  },
+  {
+    "_id": {
+      "$oid": "64854bb677f84d20315a0a48"
+    },
+    "title": "Ogniem i Mieczem",
+    "author": "Henryk Sienkiewicz",
+    "releaseDate": {
+      "$date": {
+        "$numberLong": "-2713910400000"
+      }
+    },
+    "ISBN": "978-83-779-1630-8",
+    "_class": "jpkr.advancedprogrammingproject.models.Book"
+  },
+  {
+    "_id": {
+      "$oid": "648582ebbe01284d0093cdca"
+    },
+    "title": "Lalka",
+    "author": "Bolesław Prus",
+    "releaseDate": {
+      "$date": {
+        "$numberLong": "-2556057600000"
+      }
+    },
+    "ISBN": "8373272267",
+    "_class": "jpkr.advancedprogrammingproject.models.Book"
+  },
+  {
+    "_id": {
+      "$oid": "64858cdc5594a1646cbeb2c5"
+    },
+    "title": "Władca Pierścieni",
+    "author": "J.R.R. Tolkien",
+    "releaseDate": {
+      "$date": {
+        "$numberLong": "-486864000000"
+      }
+    },
+    "ISBN": "978-83-287-0078-9",
+    "_class": "jpkr.advancedprogrammingproject.models.Book"
+  }
+]
